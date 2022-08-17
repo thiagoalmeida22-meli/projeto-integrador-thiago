@@ -73,6 +73,10 @@ ___
 - TU-12 FidelityService (83% methods, 73% lines);
 </p>
 
+## User Story
+A user Story do requisito 6 pode ser encontrada aqui:
+https://docs.google.com/document/d/e/2PACX-1vQX5Kgii57FQCHlT1F7SpIZt7LZnOLMN7x9esA5Sb2C_aAJsZSD7rVrZNQ6SI8F-Q/pub
+
 ___
 <a name="Tecnologias"></a>
 
