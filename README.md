@@ -2,6 +2,10 @@
 <p align="center">Repositório criado para hospedar o código do terceiro e último Touchpoint do Bootcamp IT Java.</p>
 
 <p align="center">
+  <img align="" alt="meliantes" src="https://media2.giphy.com/media/kG6B7EcihfJN12CVSj/giphy.gif?cid=ecf05e471tmof99bt97icr9r4bf4hcjj7ds646mgck0y704g&rid=giphy.gif&ct=g" height="70%" width="70%" />
+</p>
+
+<p align="center">
  <a href="#Objetivo">Sobre o Projeto</a> •
  <a href="#Requisitos">Requisitos</a> • 
  <a href="#Tecnologias">Tecnologias</a> • 
@@ -46,7 +50,6 @@ ___
  * - A tabela customer também contem um novo campo "PONTOS" responsável por armazenar a quantidade de pontos de fidelidade de um usúario
  * - Pequeno update na função "service.OrderService.createInboundOrder" para adicionar pontos a um usuário responsavel por criar uma inboundOrder
  * - Pequeno update na função "service.CartService.updateStatusCart" para adicionar pontos ao usuário dono de um carrinho, quando a compra desse carrinho for concluída
-   ----------- Requisito 6 -------------
  
  - RO-07 Testes de unidade & testes de integração de todos os requisitos anteriores.
 
@@ -68,7 +71,6 @@ ___
 
  ----------- Requisito 6 -------------
 - TU-12 FidelityService (83% methods, 73% lines);
------------ Requisito 6 -------------
 </p>
 
 ___
@@ -93,7 +95,7 @@ ___
 
 - Clone este repositório na sua máquina:
 
-      git clone https://github.com/diovanavalim/projeto-integrador.git
+      git clone https://github.com/thiagoalmeida22-meli/projeto-integrador-thiago
 
 - Acesse a pasta do projeto no terminal:
 
