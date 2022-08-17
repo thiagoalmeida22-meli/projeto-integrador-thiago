@@ -61,6 +61,9 @@ public class OrderService implements IOrderService {
     @Autowired
     private BatchService batchService;
 
+    @Autowired
+    private CustomerService customerService;
+
     /**
      * Method to save new Inbound Order. Validates Warehouse, Section and Agent before inserting into
      * application database;
@@ -75,6 +78,8 @@ public class OrderService implements IOrderService {
         Section section = sectionService.findSection(orderEntryDto.getSection().getSectionId());
 
         Agent agent = agentService.findAgent(orderEntryDto.getAgentId());
+
+        Customer customer = customerService.findCustomer(orderEntryDto.getSellerId());
 
         long agentWarehouseId = agent.getWarehouse().getId();
 
@@ -94,6 +99,7 @@ public class OrderService implements IOrderService {
         Set<Batch> batches = new HashSet<>();
 
         int finalQuantity = 0;
+        int finalPoints = 0;
 
         for (BatchDto batchDto : orderEntryDto.getBatchStock()) {
             Batch batch = new Batch();
@@ -122,6 +128,7 @@ public class OrderService implements IOrderService {
 
             batches.add(batch);
             finalQuantity += batch.getInitialQuantity();
+            finalPoints += product.getPrice()/10 * batch.getInitialQuantity();
         }
 
         orderEntry.setBatches(batches);
@@ -136,6 +143,7 @@ public class OrderService implements IOrderService {
             batches.forEach(batchService::createBatch);
 
             section.setCurrentProductLoad(section.getCurrentProductLoad() + finalQuantity);
+            customer.setPontos(customer.getPontos() + finalPoints);
             sectionService.saveSection(section);
         } catch (Exception e) {
             throw new InternalServerErrorException(e.getMessage());
