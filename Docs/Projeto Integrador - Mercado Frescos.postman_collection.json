@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "1fa69900-e746-4d41-b2b6-6b11c6fc374d",
+		"_postman_id": "23f8d42d-0068-4880-97ca-b878fc5beda1",
 		"name": "Projeto Integrador - Mercado Frescos",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -83,7 +83,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "\n{\n    \"date\": \"2022-08-05\",\n    \"buyerId\": 1,\n    \"orderStatus\": \"OPEN\",\n    \"products\": [\n        {\n            \"productId\": 1,\n            \"quantity\": 2\n        },\n        {\n            \"productId\": 2,\n            \"quantity\": 2\n        }\n    ]\n}\n",
+							"raw": "\n{\n    \"date\": \"2022-08-05\",\n    \"buyerId\": 1,\n    \"orderStatus\": \"OPEN\",\n    \"products\": [\n        {\n            \"productId\": 1,\n            \"quantity\": 100\n        },\n        {\n            \"productId\": 2,\n            \"quantity\": 10\n        }\n    ]\n}\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -188,7 +188,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/fresh-products/orders/1",
+							"raw": "http://localhost:8080/api/v1/fresh-products/orders/7",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -199,7 +199,7 @@
 								"v1",
 								"fresh-products",
 								"orders",
-								"1"
+								"7"
 							]
 						}
 					},
@@ -216,7 +216,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/fresh-products/list/2",
+							"raw": "http://localhost:8080/api/v1/fresh-products/list/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -227,7 +227,7 @@
 								"v1",
 								"fresh-products",
 								"list",
-								"2"
+								"1"
 							]
 						}
 					},
@@ -239,7 +239,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/fresh-products/list/2?order=L",
+							"raw": "http://localhost:8080/api/v1/fresh-products/list/1?order=L",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -250,7 +250,7 @@
 								"v1",
 								"fresh-products",
 								"list",
-								"2"
+								"1"
 							],
 							"query": [
 								{
@@ -268,7 +268,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/fresh-products/list/2?order=Q",
+							"raw": "http://localhost:8080/api/v1/fresh-products/list/1?order=Q",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -279,7 +279,7 @@
 								"v1",
 								"fresh-products",
 								"list",
-								"2"
+								"1"
 							],
 							"query": [
 								{
@@ -297,7 +297,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/fresh-products/list/2?order=V",
+							"raw": "http://localhost:8080/api/v1/fresh-products/list/1?order=V",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -308,7 +308,7 @@
 								"v1",
 								"fresh-products",
 								"list",
-								"2"
+								"1"
 							],
 							"query": [
 								{
@@ -331,7 +331,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/fresh-products/warehouse/product/8",
+							"raw": "http://localhost:8080/api/v1/fresh-products/warehouse/product/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -343,7 +343,7 @@
 								"fresh-products",
 								"warehouse",
 								"product",
-								"8"
+								"2"
 							]
 						}
 					},
@@ -360,7 +360,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/fresh-products/due-date/section/1/number-of-days/",
+							"raw": "http://localhost:8080/api/v1/fresh-products/due-date/",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -371,9 +371,6 @@
 								"v1",
 								"fresh-products",
 								"due-date",
-								"section",
-								"1",
-								"number-of-days",
 								""
 							]
 						}
@@ -386,7 +383,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/fresh-products/due-date/number-of-days/1/category/FS",
+							"raw": "http://localhost:8080/api/v1/fresh-products/due-date/list?",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -397,10 +394,167 @@
 								"v1",
 								"fresh-products",
 								"due-date",
-								"number-of-days",
+								"list"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Endpoints - Requirement 6",
+			"item": [
+				{
+					"name": "Cadastra novo premio no banco de dados",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Premium Delivery (1 mês)\",\n    \"cost\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/fidelity",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"fidelity"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualiza um prêmio do banco de dados",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Insira aqui o nome do prêmio atualizado\",\n    \"cost\": 20\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/fidelity/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"fidelity",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista todos os prêmios existentes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/fidelity",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"fidelity"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista um premio existente especifico",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/fidelity/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"fidelity",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Troca pontos de um usuario por um prêmio",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/fidelity/1/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"fidelity",
 								"1",
-								"category",
-								"FS"
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Apaga o registro de um prêmio existente",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/fidelity/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"fidelity",
+								"1"
 							]
 						}
 					},
