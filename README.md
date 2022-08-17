@@ -2,10 +2,6 @@
 <p align="center">Repositório criado para hospedar o código do terceiro e último Touchpoint do Bootcamp IT Java.</p>
 
 <p align="center">
-  <img align="" alt="meliantes" src="https://media2.giphy.com/media/kG6B7EcihfJN12CVSj/giphy.gif?cid=ecf05e471tmof99bt97icr9r4bf4hcjj7ds646mgck0y704g&rid=giphy.gif&ct=g" height="70%" width="70%" />
-</p>
-
-<p align="center">
  <a href="#Objetivo">Sobre o Projeto</a> •
  <a href="#Requisitos">Requisitos</a> • 
  <a href="#Tecnologias">Tecnologias</a> • 
@@ -40,7 +36,19 @@ ___
 - RO-03 Verificar a localização de um produto no armazém;
 - RO-04 Consultar o estoque de um produto em todos os armazéns;
 - RO-05 Consultar a data de validade por lote
-- RO-06 Testes de unidade & testes de integração de todos os requisitos anteriores.
+
+  ----------- Requisito 6 -------------
+- RO-06 Requisito Individual: Adição de um sistema de pontos - parecido com milhas - que podem ser trocados por bonus pelo usuário.
+ * - Adição de endpoints CRUD permitindo a criação, atualização, listagem e apagamentos de bonûs / prêmios
+ * - Nova tabela de prêmios com o nome: Fidelity
+ * - Alteração: A tabela Customer agora tem uma relação 1:N com a tabela Order Entry por meio da foreign key seller_id em order entry
+ * - Ou seja: um  único Customer pode criar varias inboundOrders (listar seus diferentes lotes de produtos a venda no marketplace)
+ * - A tabela customer também contem um novo campo "PONTOS" responsável por armazenar a quantidade de pontos de fidelidade de um usúario
+ * - Pequeno update na função "service.OrderService.createInboundOrder" para adicionar pontos a um usuário responsavel por criar uma inboundOrder
+ * - Pequeno update na função "service.CartService.updateStatusCart" para adicionar pontos ao usuário dono de um carrinho, quando a compra desse carrinho for concluída
+   ----------- Requisito 6 -------------
+ 
+ - RO-07 Testes de unidade & testes de integração de todos os requisitos anteriores.
 
 </p>
 <p> Cobertura de testes Unitários (TU) implementados (%)</p>
@@ -58,6 +66,9 @@ ___
 - TU-10 SectionService (100% methods, 75% lines);
 - TU-11 WarehouseService (100% methods, 100% lines);
 
+ ----------- Requisito 6 -------------
+- TU-12 FidelityService (83% methods, 73% lines);
+----------- Requisito 6 -------------
 </p>
 
 ___
