@@ -43,7 +43,7 @@ ___
 
   ----------- Requisito 6 -------------
 - RO-06 Requisito Individual: Adição de um sistema de pontos - parecido com milhas - que podem ser trocados por bonus pelo usuário.
- * - Adição de endpoints CRUD permitindo a criação, atualização, listagem e apagamentos de bonûs / prêmios
+ * - Adição de endpoints CRUD permitindo a criação, atualização, listagem e apagamentos de bônus / prêmios
  * - Nova tabela de prêmios com o nome: Fidelity
  * - Alteração: A tabela Customer agora tem uma relação 1:N com a tabela Order Entry por meio da foreign key seller_id em order entry
  * - Ou seja: um  único Customer pode criar varias inboundOrders (listar seus diferentes lotes de produtos a venda no marketplace)
