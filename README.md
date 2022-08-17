@@ -74,9 +74,10 @@ ___
 </p>
 
 ## User Story
-A user Story do requisito 6 pode ser encontrada aqui:
-https://docs.google.com/document/d/e/2PACX-1vQX5Kgii57FQCHlT1F7SpIZt7LZnOLMN7x9esA5Sb2C_aAJsZSD7rVrZNQ6SI8F-Q/pub
+A user Story do requisito 6 pode ser encontrada na pasta /Docs.
 
+## Diagrama DER
+O diagrama DER está localizado na pasta /Docs, com a adição de sellerId em "ORDER"e pontos em "CUSTOMER.
 ___
 <a name="Tecnologias"></a>
 
@@ -139,6 +140,7 @@ ___
 ## 🌙 Coleção de Requisições
 
 A coleção de requisições utilizadas para testar os endpoints estão na pasta `/Docs`. O arquivo `Projeto-Integrador.postman_collection.json` pode ser importado em algum cliente HTTP, como o Postman ou o Insomnia.
+Em especifico, os endpoints do requisito 6 estão na pasta de requisito 6. E todos os requistios de 1 a 6 estão separados por pastas após importação
 
 ---
 
