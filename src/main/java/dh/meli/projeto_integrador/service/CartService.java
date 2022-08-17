@@ -22,6 +22,7 @@ import javax.transaction.Transactional;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import static java.time.temporal.ChronoUnit.DAYS;
@@ -63,6 +64,9 @@ public class CartService implements ICartService {
      */
     @Autowired
     private ICustomerRepository customerRepository;
+
+    @Autowired
+    private CustomerService customerService;
 
     /**
      * Method that receives an object of type CartDto, build the cart object and saves on the Cart table.
@@ -223,6 +227,12 @@ public class CartService implements ICartService {
 
         if(existCart.getStatus() == PurchaseOrderStatusEnum.FINISHED) throw new ForbiddenException("Cart already Finished");
 
+        Set<ProductCart> productCarts = existCart.getProductCarts();
+        List<ProductCart> list = new ArrayList<>(productCarts);
+        List<CartProductsOutputDto> cartOutput = createCartProductList(list);
+        Double total = calculateCartTotal(cartOutput);
+
+        existCart.getCustomer().setPontos(existCart.getCustomer().getPontos() + Double.valueOf(total/10).longValue());
         existCart.setStatus(PurchaseOrderStatusEnum.FINISHED);
 
         cartRepository.save(existCart);

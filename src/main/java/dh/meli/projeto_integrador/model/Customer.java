@@ -59,7 +59,14 @@ public class Customer {
     @Column(name = "cpf")
     private String cpf;
 
+    @Column(name = "pontos")
+    private long pontos;
+
     @OneToMany(mappedBy = "customer")
     @JsonIgnoreProperties("customer")
     private Set<Cart> carts;
+
+    @OneToMany(mappedBy = "sellerId")
+    @JsonIgnoreProperties("sellerId")
+    private  Set<OrderEntry> orderEntries;
 }

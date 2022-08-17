@@ -106,6 +106,14 @@ public class Generators {
         section.setProductType("Fresco");
         section.setWarehouse(warehouse);
 
+        Customer customer = new Customer();
+        customer.setId(1);
+        customer.setCpf("111.111.111-11");
+        customer.setEmailAddress("Alberto@email.com");
+        customer.setName("Alberto");
+        customer.setPhoneNumber("1111-1111");
+        customer.setPontos(0);
+
         HashSet<Section> sections = new HashSet<Section>();
 
         sections.add(section);
@@ -152,6 +160,7 @@ public class Generators {
         batches.add(batch01);
 
         orderEntry.setBatches(batches);
+        orderEntry.setSellerId(customer);
 
         return batch01;
     }
@@ -184,6 +193,7 @@ public class Generators {
         orderEntryDto.setAgentId(1);
         orderEntryDto.setBatchStock(batchDtoSet);
         orderEntryDto.setOrderDate(LocalDate.now());
+        orderEntryDto.setSellerId(1L);
 
         return orderEntryDto;
     }
@@ -216,6 +226,7 @@ public class Generators {
         orderEntryDto.setAgentId(2);
         orderEntryDto.setBatchStock(batchDtoSet);
         orderEntryDto.setOrderDate(LocalDate.now());
+        orderEntryDto.setSellerId(2L);
 
         return orderEntryDto;
     }

@@ -59,4 +59,9 @@ public class OrderEntry {
     @JoinColumn(name = "section_id", referencedColumnName = "id")
     @JsonIgnoreProperties("orderEntries")
     private Section section;
+
+    @ManyToOne
+    @JoinColumn(name = "seller_id", referencedColumnName = "id")
+    @JsonIgnoreProperties("batches")
+    private Customer sellerId;
 }

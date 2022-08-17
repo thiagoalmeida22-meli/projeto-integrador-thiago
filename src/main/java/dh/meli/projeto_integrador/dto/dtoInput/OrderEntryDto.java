@@ -1,5 +1,6 @@
 package dh.meli.projeto_integrador.dto.dtoInput;
 
+import dh.meli.projeto_integrador.model.Customer;
 import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -47,4 +48,6 @@ public class OrderEntryDto {
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate orderDate;
 
+    @NotNull
+    private Long sellerId;
 }

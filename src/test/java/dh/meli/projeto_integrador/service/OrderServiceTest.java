@@ -7,6 +7,7 @@ import dh.meli.projeto_integrador.exception.ResourceNotFoundException;
 import dh.meli.projeto_integrador.model.*;
 import dh.meli.projeto_integrador.repository.IOrderRepository;
 import dh.meli.projeto_integrador.util.Generators;
+import dh.meli.projeto_integrador.utils.GenerateCustomer;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -51,6 +52,9 @@ public class OrderServiceTest {
     @Mock
     BatchService batchService;
 
+    @Mock
+    CustomerService customerService;
+
     @BeforeEach
     void setup() {
         BDDMockito.when(orderRepository.save(ArgumentMatchers.any(OrderEntry.class)))
@@ -65,6 +69,8 @@ public class OrderServiceTest {
                 .thenReturn(Generators.getSection());
         BDDMockito.when(agentService.findAgent(ArgumentMatchers.anyLong()))
                 .thenReturn(Generators.getAgent());
+        BDDMockito.when(customerService.findCustomer(ArgumentMatchers.anyLong()))
+            .thenReturn(GenerateCustomer.newCustomer1());
         BDDMockito.when(batchService.createBatch(ArgumentMatchers.any(Batch.class)))
                 .thenReturn(Generators.createBatch());
     }
