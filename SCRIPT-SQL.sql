@@ -26,15 +26,15 @@ INSERT INTO product VALUES (NULL, 'Maçã', 20.10, 'Fresco'),
                            (NULL, 'Presunto', 20.10, 'Refrigerado'),
                            (NULL, 'Sorvete', 20.10, 'Congelado');
 
-INSERT INTO customer VALUES (NULL,'111.111.111-11','Alberto@email.com','Alberto','1111-1111'),
-                            (NULL,'222.222.222-22','Bernado@email.com','Bernardo','2222-2222'),
-                            (NULL,'333.333.333-33','Carolina@email.com','Carolina', '3333-3333');
+INSERT INTO customer VALUES (NULL,'111.111.111-11','Alberto@email.com','Alberto','1111-1111', 100),
+                            (NULL,'222.222.222-22','Bernado@email.com','Bernardo','2222-2222', 100),
+                            (NULL,'333.333.333-33','Carolina@email.com','Carolina', '3333-3333', 100);
 
-INSERT INTO order_entry VALUES (NULL, "2022-08-08", 1),
-                               (NULL, "2022-08-09", 2),
-                               (NULL, "2022-08-10", 3),
-                               (NULL, "2022-08-11", 4),
-                               (NULL, "2022-08-12", 5);
+INSERT INTO order_entry VALUES (NULL, "2022-08-08", 1, 1),
+                               (NULL, "2022-08-09", 2, 1),
+                               (NULL, "2022-08-10", 3, 2),
+                               (NULL, "2022-08-11", 4, 2),
+                               (NULL, "2022-08-12", 5, 3);
 
 INSERT INTO batch VALUES (NULL, 30, 17.0, "2022-09-30", 30, "2022-07-15", "12:06:50", 10.0, 1, 1),
                          (NULL, 50, 24.0, "2022-10-12", 50, "2022-07-15", "15:30:54", 20.0, 1, 4),
@@ -53,12 +53,12 @@ INSERT INTO cart VALUES (NULL, "2022-08-08", "OPEN", 1),
                         (NULL, "2022-08-08", "OPEN", 1);
 
 INSERT INTO product_cart VALUES (NULL, 2, 1, 1),
-                         (NULL, 3, 1, 3),
-                         (NULL, 1, 2, 5),
-                         (NULL, 5, 2, 7),
-                         (NULL, 2, 3, 9),
-                         (NULL, 3, 3, 2),
-                         (NULL, 4, 4, 4),
-                         (NULL, 1, 4, 6),
-                         (NULL, 1, 5, 8),
-                         (NULL, 2, 5, 1);
+                                (NULL, 3, 1, 3),
+                                (NULL, 1, 2, 5),
+                                (NULL, 5, 2, 7),
+                                (NULL, 2, 3, 9),
+                                (NULL, 3, 3, 2),
+                                (NULL, 4, 4, 4),
+                                (NULL, 1, 4, 6),
+                                (NULL, 1, 5, 8),
+                                (NULL, 2, 5, 1);
